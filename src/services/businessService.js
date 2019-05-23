@@ -1,6 +1,7 @@
 import businessBuilderForUI from 'Mappers/businessBuilderForUI';
 
 export default class BusinessService {
+  
   constructor($http) {
     'ngInject';
 
@@ -16,7 +17,9 @@ export default class BusinessService {
           longitude,
         },
       })
-      .then(({ data }) => data && data.map(businessBuilderForUI))
+      .then((data) => {
+        return data && data.data.businesses.map(businessBuilderForUI); 
+      })
       .catch(({ data }) => data);
   }
 }

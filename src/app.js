@@ -39,7 +39,7 @@ export default angular
       .state('app.home', {
         url: '/',
         controller: 'HomeCtrl',
-        contollerAs: 'vm',
+        controllerAs: 'vm',
         template: homeView,
       });
 

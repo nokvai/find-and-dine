@@ -2,7 +2,7 @@
     <div ng-class="vm.style.container">
         <img ng-class="vm.style.card" ng-repeat="card in vm.selectedCards" ng-src="{{card.imageUrl}}" />
         <div ng-repeat="business in vm.businesses">
-            <business imageSrc="business.imageSrc" name="business.name"></business>
+            <business image-src="business.imageSrc" name="business.name"></business>
         </div>
     </div>
 </div>

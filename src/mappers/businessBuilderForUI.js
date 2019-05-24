@@ -5,6 +5,7 @@ const businessBuilderForUI = data => ({
   location: data.location,
   rating: data.rating,
   categories: data.categories,
+  imageSrc: data.image_url
 });
 
 export default businessBuilderForUI;

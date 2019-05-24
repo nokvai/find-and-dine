@@ -16,7 +16,7 @@ describe('<business></business>', () => {
     angular.mock.inject(($rootScope, $compile) => {
       scope = $rootScope.$new();
       element = angular.element(
-        `<business name="\'${name}\'" imageSrc=" \'${imageSrc}\' "></business>`
+        `<business name="\'${name}\'" image-src=" \'${imageSrc}\' "></business>`
       );
       element = $compile(element)(scope);
       controller = element.controller('business');

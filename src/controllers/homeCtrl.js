@@ -1,7 +1,6 @@
 import style from '../sass/home.scss';
 
 export default class HomeCtrl {
- 
   constructor(businessService) {
     'ngInject';
     this.businessService = businessService;
@@ -16,7 +15,6 @@ export default class HomeCtrl {
   }
 
   setBusinesses(data) {
-   console.log('data:', data);
     this.businesses = data;
   }
 

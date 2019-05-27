@@ -17,6 +17,8 @@ export default class HomeCtrl {
   }
 
   setBusinesses(data) {
+    console.log(data);
+    
     this.businesses = data;
     const titleData = data.map((v) => {
         const title = v.categories.map((n) => {

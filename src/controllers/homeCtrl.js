@@ -6,6 +6,8 @@ export default class HomeCtrl {
     this.businessService = businessService;
     this.businesses = [];
     this.style = style;
+    this.categories = [];
+    this.selectedValue;
   }
 
   $onInit() {
@@ -16,9 +18,19 @@ export default class HomeCtrl {
 
   setBusinesses(data) {
     this.businesses = data;
+    const titleData = data.map((v) => {
+        const title = v.categories.map((n) => {
+          return n.title;
+        });
+        
+        return title[0];
+    });
+
+    this.categories = ['All', ...Array.from(new Set(titleData))];
+    this.selectedValue = this.categories[0];
   }
 
-  search({ coords }) {    
+  search({ coords }) {
     this.businessService.search(coords).then((response) => {
         this.setBusinesses(response);
     }); 

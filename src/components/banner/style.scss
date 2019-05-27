@@ -1,0 +1,71 @@
+@import '../../sass/global/global.scss';
+
+.banner {
+    background-image: url('../../assets/images/jause-338498_1920.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 550px;
+    text-align: center;
+    position: relative;
+    
+    .front {
+        background-color: #00AAE5;
+        height: 550px;
+        opacity: 0.7;
+    }
+
+    .back {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0; 
+        .parent {
+            display: flex;
+            padding-top: 35px;
+        }
+        .narrow {
+            width: 200px;
+            .nav {
+                text-align: left;
+                a {
+                    font-family: $helveticaBold;
+                    font-size: 18px;
+                    text-decoration: none;
+                    color: #ffffff;
+                }
+            }
+        }
+        .wide {
+            flex: 1;
+            padding-left: 5%;
+            .boxLogo {
+                background-color: #ffffff;
+                height: 80px;
+                width: 75px;
+                p {
+                    padding-top: 28px;
+                    padding-left: 6px;
+                    text-align: left;
+                    font-family: $helveticaLight;
+                    font-size: 14px;        
+                    line-height: 16px;
+                    color: #00AAE5;
+                    z-index: 9996;
+                    b {
+                        font-family: $helveticaBold;
+                        font-size: 14px;
+                        color: #00AAE5;
+                    }
+                }
+            }
+        }
+        .title {
+            font-family: $helveticaLight;
+            font-size: 40px;
+            line-height: 45px;
+            padding-top: 6%;
+        }
+    }
+
+}

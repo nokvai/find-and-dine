@@ -1,8 +1,8 @@
 <div ng-class="vm.style.card">
-    <div ng-class="vm.style.imageBack" style="background: linear-gradient(rgba(0, 185, 230, 0.45), rgba(0, 185, 230, 0.45)), url('{{ vm.imageSrc }}')">
+    <div ng-if="vm.isVisible" ng-class="vm.style.imageBack" style="background: linear-gradient(rgba(0, 185, 230, 0.45), rgba(0, 185, 230, 0.45)), url('{{ vm.imageSrc }}')">
         <div ng-class="vm.style.container">
             <div ng-class="vm.style.startContainer">
-                <img ng-class="vm.style.startImage" src="../../assets/images/star.png" ng-repeat="i in [].constructor(vm.ratings) track by $index" />
+                <img  ng-class="vm.style.startImage" src="../../assets/images/star.png" ng-repeat="i in [].constructor(vm.roundOff(vm.rating)) track by $index" />
             </div>
             <h4><b>{{vm.name}}</b></h4>
             <div ng-class="vm.style.circle">
@@ -15,6 +15,21 @@
             </p>
             <div ng-class="vm.style.viewDetailLink">
                 <a ui-sref="app.details({ id: vm.id })">VIEW DETAILS</a>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!vm.isVisible" ng-class="vm.style.imageBack2" style="background: url('{{ vm.imageSrc }}')">
+        <div ng-class="vm.style.container">
+            <p ng-class="vm.style.descriptionText">
+                <b>PHONE:</b> {{vm.phone}}
+                <br />
+                <b>ADDRESS:</b> {{vm.location.display_address.join(', ')}}
+                <br />
+                <b>RATING:</b>
+            </p>
+
+            <div ng-class="vm.style.startContainer">
+                <img  ng-class="vm.style.startImage" src="../../assets/images/star.png" ng-repeat="i in [].constructor(vm.roundOff(vm.rating)) track by $index" />
             </div>
         </div>
     </div>

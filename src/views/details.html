@@ -1,26 +1,22 @@
 <div ng-class="vm.style.detailContainer">
-   <div ng-class="vm.style.maps">
-
+   <div ng-class="vm.style.mapContainer">
+        <div id="googlemap" style="height: 350px; width: 100%;"></div>
    </div>
+    
    <div ng-class="vm.style.details">
-        <div ng-class="vm.style.alignleft">
-            <div ng-class="detailText">
-                <img ng-class="" />
-                <div>
-                    <p>{{vm.detail.phone}}</p>
-                    <p>{{vm.detail.location.display_address.join(', ')}}</p>
-                    <div ng-class="vm.style.startContainer">
-                        <img ng-class="vm.style.startImage" src="../assets/images/star.png" ng-repeat="i in [].constructor(vm.detail.ratings) track by $index" />
-                    </div>
-                </div>
-            </div>
+       <div ng-class="vm.style.alignleft">
+            <business ng-class="vm.style.cardPosition" image-src="vm.detail.imageSrc" name="vm.detail.name" phone="vm.detail.phone" location="vm.detail.location" rating="vm.detail.rating" id="vm.detail.id"></business>
+            <h4 ng-if="vm.detail.hours[0].is_open_now" ng-class="vm.style.open">OPEN</h4>
+            <h4 ng-if="!vm.detail.hours[0].is_open_now" ng-class="vm.style.closed">CLOSE</h4>
         </div>
         <div ng-class="vm.style.alignright">
-            <table>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+            <div ng-class="vm.style.carousel">
+                
+            </div>
+            <table ng-class="vm.style.schedule">
+                <tr ng-class="vm.style.row" ng-if="vm.detail.hours" ng-repeat="i in vm.detail.hours[0].open">
+                    <td ng-class="vm.style.col">{{vm.formatDay(i.day)}}</td>
+                    <td ng-class="vm.style.col">{{vm.formatTime(i.start)}} - {{vm.formatTime(i.end)}}</td>
                 </tr>
             </table>
         </div>

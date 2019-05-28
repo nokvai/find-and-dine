@@ -1,4 +1,5 @@
 import businessBuilderForUI from 'Mappers/businessBuilderForUI';
+import businessDetailMapper from 'Mappers/businessDetailMapper';
 
 export default class BusinessService {
   
@@ -21,5 +22,14 @@ export default class BusinessService {
         return data && data.data.businesses.map(businessBuilderForUI); 
       })
       .catch(({ data }) => data);
+  }
+
+  view(id) {
+    return this.$http
+    .get(`${process.env.API_SERVER_URL}/${this.apiBaseUrl}/${id}`)
+    .then((data) => {
+      return data && businessDetailMapper(data.data);
+    })
+    .catch(({ data }) => data);
   }
 }

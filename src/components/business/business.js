@@ -7,7 +7,11 @@ export default {
   controller,
   controllerAs: 'vm',
   bindings: {
+    id: '<',
     name: '<',
     imageSrc: '<',
+    phone: '<',
+    location: '<',
+    rating: '<'
   },
 };

@@ -1,8 +1,14 @@
-<div ng-class="vm.style.content">
-    <div ng-class="vm.style.container">
-        <img ng-class="vm.style.card" ng-repeat="card in vm.selectedCards" ng-src="{{card.imageUrl}}" />
-        <div ng-repeat="business in vm.businesses">
-            <business image-src="business.imageSrc" name="business.name"></business>
+<div ng-class="vm.style.businessContainer">
+    <div ng-class="vm.style.filter">
+        <p ng-class="vm.style.selectLabel" for="repeatSelect"> Filter by category: 
+            <select ng-class="vm.style.minimal" ng-model="vm.selectedValue" ng-options="option for option in vm.categories"></select>
+        </p>
+    </div>
+    <div ng-class="vm.style.content">
+        <div ng-class="vm.style.container">
+            <div ng-repeat="business in vm.businesses | filter:((vm.selectedValue === 'All' ? '' : vm.selectedValue)) track by $index">
+                <business image-src="business.imageSrc" name="business.name" phone="business.phone" location="business.location" rating="business.rating" id="business.id"></business>
+            </div>
         </div>
     </div>
 </div>

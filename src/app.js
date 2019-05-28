@@ -10,6 +10,7 @@ import controllers from './controllers';
 import components from './components';
 
 import appView from './views/app.html';
+import detailsView from './views/details.html';
 import homeView from './views/home.html';
 
 /**
@@ -41,6 +42,15 @@ export default angular
         controller: 'HomeCtrl',
         controllerAs: 'vm',
         template: homeView,
+      })
+      .state('app.details', {
+        url: '/details',
+        controller: 'DetailsCtrl',
+        controllerAs: 'vm',
+        template: detailsView,
+        params: {
+          'id': null
+        }
       });
 
     $urlRouterProvider.otherwise('/');

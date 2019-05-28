@@ -4,15 +4,19 @@ export default class BusinessCtrl {
   constructor() {
     'ngInject';
     this.style = style;
-    this.ratings = 0;
+    this.isVisible = false;
   }
 
   $onInit() {
-     this.ratings = this.roundOff(this.rating);
+    if (this.id) {
+      this.isVisible = true;
+    } else {
+      this.isVisible = false;
+    }
   }
-
+  
   roundOff(rate) {
     return Math.round(rate);
   }
-  
+
 }

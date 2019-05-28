@@ -31,12 +31,12 @@
     <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
     <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
     <% } %>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAlUZOpUy_-wjxzCF3dGCNzg4BvKaYGMw"></script>
     <!-- incompatible browser -->
     <style>
         .no-js .incompatibleBrowser {
             display: block;
         }
-
     </style>
 </body>
 

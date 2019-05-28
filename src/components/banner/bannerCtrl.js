@@ -4,5 +4,5 @@ export default class BannerCtrl {
   constructor() {
     this.style = style;
   }
-  $onInit() {}
+  $onInit() { }
 }

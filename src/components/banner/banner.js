@@ -5,5 +5,8 @@ import './style.scss';
 export default {
   template,
   controller,
-  controllerAs: 'vm'
+  controllerAs: 'vm',
+  bindings: {
+    name: '<'
+  },
 };

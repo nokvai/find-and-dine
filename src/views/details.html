@@ -7,10 +7,10 @@
             <div ng-class="detailText">
                 <img ng-class="" />
                 <div>
-                    <p>{{vm.phone}}</p>
-                    <p>{{vm.location}}</p>
+                    <p>{{vm.detail.phone}}</p>
+                    <p>{{vm.detail.location.display_address.join(', ')}}</p>
                     <div ng-class="vm.style.startContainer">
-                        <img ng-class="vm.style.startImage" src="../assets/images/star.png" ng-repeat="i in [].constructor(vm.ratings) track by $index" />
+                        <img ng-class="vm.style.startImage" src="../assets/images/star.png" ng-repeat="i in [].constructor(vm.detail.ratings) track by $index" />
                     </div>
                 </div>
             </div>

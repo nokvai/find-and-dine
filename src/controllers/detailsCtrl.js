@@ -6,13 +6,14 @@ export default class DetailsCtrl {
     this.style = style;
     this.businessService = businessService;
     this.stateParam = $stateParams;
+    this.detail = {};
   }
 
   $onInit() {
     this.businessService.view(this.stateParam.id).then((res) => {
-      console.log(res);
+      this.detail = res;
+      console.log(this.detail);
     });
-
   }
 
 }

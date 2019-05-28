@@ -10,18 +10,19 @@
             float: left;
             
             .detailText {
-                .startContainer {
-                    position: relative;
-                    top: -250px;
-                    left: 275px;
-                    display: flex;
-                    flex-direction: row-reverse;
-    
-                    .startImage {
-                        width: 14px;
-                        height: 14px;
-                        margin: 2px;
-                    }
+                
+            }
+            .startContainer {
+                // position: relative;
+                // top: -250px;
+                // left: 275px;
+                display: flex;
+                flex-direction: row-reverse;
+
+                .startImage {
+                    width: 14px;
+                    height: 14px;
+                    margin: 2px;
                 }
             }
         }

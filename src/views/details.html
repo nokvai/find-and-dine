@@ -1,3 +1,28 @@
-<div>
-    <h1>Test Details</h1>
+<div ng-class="vm.style.detailContainer">
+   <div ng-class="vm.style.maps">
+
+   </div>
+   <div ng-class="vm.style.details">
+        <div ng-class="vm.style.alignleft">
+            <div ng-class="detailText">
+                <img ng-class="" />
+                <div>
+                    <p>{{vm.phone}}</p>
+                    <p>{{vm.location}}</p>
+                    <div ng-class="vm.style.startContainer">
+                        <img ng-class="vm.style.startImage" src="../assets/images/star.png" ng-repeat="i in [].constructor(vm.ratings) track by $index" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-class="vm.style.alignright">
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+   </div>
 </div>

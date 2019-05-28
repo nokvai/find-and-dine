@@ -67,7 +67,7 @@ npm run start:server     : run api server
 ```
 API_SERVER_URL=http://localhost:3200
 YELP_API_URL=https://api.yelp.com/v3
-YELP_API_KEY=Bearer [PUT YOUR YELP API KEY HERE]
+YELP_API_KEY=Bearer sNB2jrpPhr4LlEPFJgmsN9vLtZvusxOcr9sBmNsE3e9Qfd5-Uq9gKY73LHpr15TlJPYZ750TPX5v3OnC85iU0NZA0reQqPWvcHKtuW-AFdMF4B4CqTl-E_u-9_nlXHYx
 ```
 
 [Check API Key](https://www.yelp.com/developers/v3/manage_app)

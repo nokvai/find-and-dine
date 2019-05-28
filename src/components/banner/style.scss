@@ -34,6 +34,11 @@
                     text-decoration: none;
                     color: #ffffff;
                 }
+                @media (max-width: 767px) {
+                    text-align: right;
+                    margin-right: 15%;
+                    margin-top: 5%;
+                }
             }
         }
         .wide {

@@ -17,15 +17,17 @@ export default class HomeCtrl {
   }
 
   setBusinesses(data) {
-    console.log(data);
-    
     this.businesses = data;
+    this.setCategoryFilter(data);
+  }
+
+  setCategoryFilter(data) {
     const titleData = data.map((v) => {
-        const title = v.categories.map((n) => {
-          return n.title;
-        });
-        
-        return title[0];
+      const title = v.categories.map((n) => {
+        return n.title;
+      });
+      
+      return title[0];
     });
 
     this.categories = ['All', ...Array.from(new Set(titleData))];

@@ -5,6 +5,10 @@
     width: 400px;
     height: 400px;
 
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+
     .imageBack {
         background-position: center center;
         background-repeat: no-repeat;
@@ -12,88 +16,116 @@
         min-height: 400px;
         border-radius: 5px;
 
-            .container {
-                padding: 2px 16px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: #ffffff;
-                height: 245px;
-                top: 155px;
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            height: 245px;
+            top: 155px;
+            position: relative;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            
+            .startContainer {
                 position: relative;
-                border-bottom-right-radius: 5px;
-                border-bottom-left-radius: 5px;
-                
-                .startContainer {
-                    position: relative;
-                    top: -240px;
-                    left: 260px;
-                    .startImage {
-                        width: 14px;
-                        height: 14px;
-                    }
+                top: -250px;
+                left: 275px;
+                display: flex;
+                flex-direction: row-reverse;
+
+                @media (max-width: 768px) {
+                    left: 60%;
+                }
+
+                .startImage {
+                    width: 14px;
+                    height: 14px;
+                    margin: 2px;
+                }
+            }
+            
+            h4 {
+                position: absolute;
+                top: -120px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 18px;
+                line-height: 22px;
+            }
+
+            .circle {
+                background: #ccc;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                position: absolute;
+                top: -45px;
+                left: 155px;
+
+                @media (max-width: 767px) {
+                    left: 34%;
+                    width: 80px;
+                    height: 80px;
                 }
                 
-
-                h4 {
+                .food {
+                    width: 50px;
+                    height: 50px;
                     position: absolute;
-                    top: -120px;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-size: 18px;
-                    line-height: 22px;
-                }
-
-                .circle {
-                    background: #ccc;
-                    width: 90px;
-                    height: 90px;
-                    border-radius: 50%;
-                    position: absolute;
-                    top: -45px;
-                    left: 155px;
-                    
-                    .food {
-                        width: 50px;
-                        height: 50px;
-                        position: absolute;
-                        margin-top: 20px;
-                        margin-left: 20px;
-                    }
-                }
-
-                .descriptionText {
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-size: 16px;
-                    line-height: 28px;
-                    color: #000000;
                     margin-top: 20px;
                     margin-left: 20px;
-                }
-
-                .viewDetailLink {
-                    position: absolute;
-                    top: 80%;
-                    left: 65%;
-                    a {
-                        text-decoration: none;
-                        color: #000000;
-                        font-family: Arial, Helvetica, sans-serif;
-                        font-size: 16px;
-                        line-height: 28px;
-                        font-weight: bold;
-                    }
-                    &:focus {
-                        text-decoration: none;
-                        color: #ccc;
+                    @media (max-width: 767px) {
+                        width: 40px;
+                        height: 40px;
                     }
                 }
-                
-                
             }
+
+            .descriptionText {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                line-height: 28px;
+                color: #000000;
+                position: relative;
+                left: -32px;
+                @media (max-width: 767px) {
+                    position: relative;
+                    left: -20%;
+                    font-size: 12px;
+                    line-height: 22px;
+                    text-align: center;
+                }
+            }
+
+            .viewDetailLink {
+                position: absolute;
+                top: 80%;
+                left: 65%;
+                width: 100%;
+                
+                @media (max-width: 767px) {
+                    top: 80%;
+                    left: 34%;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #000000;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    line-height: 28px;
+                    font-weight: bold;
+                    @media (max-width: 767px) {
+                        font-size: 12px;
+                    }
+                }
+                &:focus {
+                    text-decoration: none;
+                    color: #ccc;
+                }
+            }
+        }
     }
-
-
-        
 }
 
 .card:hover {

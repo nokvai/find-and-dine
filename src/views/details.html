@@ -1,3 +1,4 @@
+<banner name="vm.detail.name"></banner>
 <div ng-class="vm.style.detailContainer">
    <div ng-class="vm.style.mapContainer">
         <div id="googlemap" style="height: 350px; width: 100%;"></div>
@@ -11,7 +12,15 @@
         </div>
         <div ng-class="vm.style.alignright">
             <div ng-class="vm.style.carousel">
-                
+               <div ng-class="vm.style.leftImageContainer" style="background-image: url('{{ vm.containerPhoto[0] }}');">
+                <!-- <img ng-class="vm.style.leftImage" src="{{vm.containerPhoto[0]}}" /> -->
+               </div>
+               <div ng-class="vm.style.rightImageContainer" style="background-image: url('{{ vm.containerPhoto[1] }}');">
+                <!-- <img ng-class="vm.style.rightImage" src="{{vm.containerPhoto[1]}}"  /> -->
+               </div>
+            </div> 
+            <div ng-class="vm.style.indicatorContainer">
+                <div ng-class="vm.indicator !== $index ? vm.style.indicator : vm.style.indicatorActive" ng-repeat="i in vm.detail.photos" ng-click="vm.loadImages($index)"></div>
             </div>
             <table ng-class="vm.style.schedule">
                 <tr ng-class="vm.style.row" ng-if="vm.detail.hours" ng-repeat="i in vm.detail.hours[0].open">

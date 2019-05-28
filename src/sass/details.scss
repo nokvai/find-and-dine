@@ -12,15 +12,22 @@
         display: flex;
         padding-left: 5%;
         padding-right: 5%;
+        margin-top: -160px;
 
         .cardPosition {
             position: absolute;
             top: 835px;
+            @media (max-width: 767px) {
+                top: 900px;
+            }
         }
 
         .alignleft {
             flex: 50%;
             height: 100%;
+            @media (max-width: 767px) {
+                flex: unset;
+            }
             .detailText {
                 height: 370px;
                 background-color: #2c2c2c;
@@ -69,10 +76,67 @@
         .alignright {
             flex: 40%;
             height: 100%;
-
-            .carousel {
-
+            @media (max-width: 767px) {
+                flex: 100%;
+                width: 100%;
+                margin-top: 380px;
+                height: unset;
             }
+            .carousel {
+                display: flex;
+                height: 200px;
+                @media (max-width: 767px) {
+                    height: 150px;
+                }
+                .leftImageContainer {
+                    flex: 50%;
+                    height: inherit;
+                    margin-right: 10px;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    @media (max-width: 767px) { 
+                        margin-right: 4px;
+                    }
+                }
+                .rightImageContainer {
+                    flex: 50%;
+                    height: inherit;
+                    margin-left: 10px;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    @media (max-width: 767px) { 
+                        margin-right: 4px;
+                    }
+                }
+            }
+
+            .indicatorContainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+
+                .indicator {
+                    background-color: #ccc;
+                    border-radius: 40px;
+                    height: 15px;
+                    width: 15px;
+                    margin: 5px;
+                    cursor: pointer;
+                }
+                .indicatorActive {
+                    background-color: #2c2c2c;
+                    border-radius: 40px;
+                    border-width: 1px;
+                    height: 15px;
+                    width: 15px;
+                    margin: 5px;
+                    cursor: pointer;
+                }
+            }
+
             .schedule {
                 border-collapse: collapse;
                 width: 100%;
@@ -81,14 +145,14 @@
                 line-height: 24px;
                 font-weight: 600;
                 margin-top: 30px;
-
+                background-color: #f9fafc;
                 .row:nth-child(even) { 
                     background-color: #ccc;
                     height: 30px;
                 }
                 .col {
                     text-align: left;
-                    padding: 8px;
+                    padding: 10px;
                     color: #000000;
                     &:nth-child(2) {
                         text-align: right;
